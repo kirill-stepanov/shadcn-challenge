@@ -22,7 +22,6 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command";
-import { Input } from "@/components/ui/input";
 
 const Searchbar = () => {
   const [open, setOpen] = useState(false);
