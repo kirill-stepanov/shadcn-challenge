@@ -1,15 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+
+import Header from "@/components/common/Header";
+
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const aspekta = localFont({
+  src: [
+    {
+      path: "../assets/fonts/Aspekta-400.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/Aspekta-500.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/Aspekta-600.ttf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -24,9 +37,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${aspekta.className} antialiased`}>
+        <Header />
         {children}
       </body>
     </html>
