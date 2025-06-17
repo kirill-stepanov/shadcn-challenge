@@ -1,0 +1,8 @@
+export const COOKIES = {
+  ACCESS_TOKEN: "ACCESS_TOKEN",
+  REFRESH_TOKEN: "REFRESH_TOKEN",
+};
+
+export const LOCALE_STORAGE = {
+  USER_DATA: "USER_DATA",
+};

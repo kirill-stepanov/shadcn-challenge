@@ -1,8 +1,12 @@
+import { getUsers } from "@/api/users";
 import AddIcon from "@/assets/icons/AddIcon";
 import { Button } from "@/components/ui/button";
 import { SidebarInset } from "@/components/ui/sidebar";
+import HomeTable from "@/components/home/HomeTable";
 
-const HomeContent = () => {
+const HomeContent = async () => {
+  const data = await getUsers();
+
   return (
     <SidebarInset>
       <div className="px-15 py-5 border border-border">
@@ -27,7 +31,7 @@ const HomeContent = () => {
       </div>
 
       <div className="px-15 py-[47px] w-full">
-        <div className="bg-muted h-[213px] rounded-xl max-w-[1080px] flex items-center justify-between mx-auto" />
+        <HomeTable users={data.users ?? []} />
       </div>
     </SidebarInset>
   );
